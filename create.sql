@@ -22,8 +22,6 @@ create table mecz
     id_termin INTEGER,
     ilosc_zoltych_kartek INTEGER,
     ilosc_czerwonych_kartek INTEGER,
-    ilosc_bramek INTEGER,
-    czy_wygrany BOOLEAN,
     primary key(id),
     constraint fk_termin
         foreign key (id_termin)
@@ -36,7 +34,6 @@ create table klub
     id_liga INTEGER,
     nazwa TEXT,
     data_powstania DATE,
-    id_sklad INTEGER,
     miejsce_w_lidze INTEGER,
     ilosc_punktow INTEGER,
     primary key(id),
@@ -71,12 +68,17 @@ create table pilkarz
     constraint fk_sklad
         foreign key (id_sklad)
         references sklad(id)
+    constraint fkk_klub
+        foreign key (id_klubu)
+        references klub(id)
 );
 
 create table spotkanie
 (
     id_meczu INTEGER,
     id_klubu INTEGER,
+    ilosc_bramek INTEGER,
+    czy_wygrany BOOLEAN,
     constraint fk_mecz
         foreign key (id_meczu)
         references mecz(id),
