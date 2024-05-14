@@ -1,6 +1,6 @@
 create table termin
 (
-    id INTEGER GENERATED ALWAYS AS IDENTITY,
+    id serial,
     godzina_rozpoczecia INTEGER,
     godzina_zakonczenia INTEGER,
     data_meczu DATE,
@@ -9,7 +9,7 @@ create table termin
 
 create table liga
 (
-    id INTEGER GENERATED ALWAYS AS IDENTITY,
+    id serial,
     nazwa TEXT,
     ilosc_druzyn INTEGER,
     kraj TEXT,
@@ -18,7 +18,7 @@ create table liga
 
 create table mecz
 (
-    id INTEGER GENERATED ALWAYS AS IDENTITY,
+    id serial,
     id_termin INTEGER,
     ilosc_zoltych_kartek INTEGER,
     ilosc_czerwonych_kartek INTEGER,
@@ -30,7 +30,7 @@ create table mecz
 
 create table klub
 (
-    id INTEGER GENERATED ALWAYS AS IDENTITY,
+    id serial,
     id_liga INTEGER,
     nazwa TEXT,
     data_powstania DATE,
@@ -45,7 +45,7 @@ create table klub
 
 create table sklad
 (
-    id INTEGER GENERATED ALWAYS AS IDENTITY,
+    id serial,
     id_klubu INTEGER,
     czy_gra_w_meczu BOOLEAN,
     primary key(id),
@@ -56,7 +56,7 @@ create table sklad
 
 create table pilkarz
 (
-    id INTEGER GENERATED ALWAYS AS IDENTITY,
+    id serial,
     id_sklad INTEGER,
     id_klubu INTEGER,
     imie TEXT,
@@ -67,7 +67,7 @@ create table pilkarz
     primary key(id),
     constraint fk_sklad
         foreign key (id_sklad)
-        references sklad(id)
+        references sklad(id),
     constraint fkk_klub
         foreign key (id_klubu)
         references klub(id)
