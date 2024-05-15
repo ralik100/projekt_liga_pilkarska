@@ -62,6 +62,7 @@ create table pilkarz
     imie TEXT,
     nazwisko TEXT,
     data_urodzenia DATE,
+    reprezentowany_kraj TEXT,
     nr_na_koszulce INTEGER,
     czy_pauzuje BOOLEAN,
     primary key(id),

@@ -37,6 +37,7 @@ INSERT INTO mecz (id_termin, ilosc_zoltych_kartek, ilosc_czerwonych_kartek) VALU
 
 INSERT INTO klub (id_liga, nazwa, data_powstania, miejsce_w_lidze, ilosc_punktow) VALUES
 (1, 'Manchester United', '1878-03-05', 5, 63),
+(1, 'Manchester City', '1880-04-16', 1, 100),
 (2, 'Real Madrid', '1902-03-06', 3, 75),
 (3, 'Bayern Monachium', '1900-02-27', 2, 78),
 (4, 'Juventus Turyn', '1897-11-01', 4, 70),
@@ -57,20 +58,22 @@ INSERT INTO sklad (id_klubu, czy_gra_w_meczu) VALUES
 (7, TRUE),
 (8, FALSE),
 (9, TRUE),
-(10, TRUE);
+(10, TRUE),
+(1, FALSE);
 
 
-INSERT INTO pilkarz (id_sklad, id_klubu, imie, nazwisko, data_urodzenia, nr_na_koszulce, czy_pauzuje) VALUES
-(1, 1, 'David', 'Beckham', '1975-05-02', 7, FALSE),
-(2, 2, 'Cristiano', 'Ronaldo', '1985-02-05', 7, FALSE),
-(3, 3, 'Robert', 'Lewandowski', '1988-08-21', 9, FALSE),
-(4, 4, 'Gianluigi', 'Buffon', '1978-01-28', 1, TRUE),
-(5, 5, 'Neymar', 'Junior', '1992-02-05', 10, FALSE),
-(6, 6, 'Donny', 'van de Beek', '1997-04-18', 6, FALSE),
-(7, 7, 'Pepe', 'Anderson', '1987-04-05', 11, FALSE),
-(8, 8, 'Radamel', 'Falcao', '1986-02-10', 9, FALSE),
-(9, 9, 'Artem', 'Dzyuba', '1988-08-22', 22, FALSE),
-(10, 10, 'Chicharito', 'Hernandez', '1988-06-01', 14, FALSE);
+INSERT INTO pilkarz (id_sklad, id_klubu, imie, nazwisko, data_urodzenia,reprezentowany_kraj, nr_na_koszulce, czy_pauzuje) VALUES
+(1, 1, 'David', 'Beckham', '1975-05-02','Anglia', 7, FALSE),
+(2, 2, 'Cristiano', 'Ronaldo', '1985-02-05','Portugalia', 7, FALSE),
+(3, 3, 'Robert', 'Lewandowski', '1988-08-21','Polska', 9, FALSE),
+(NULL, NULL, 'Gianluigi', 'Buffon', '1978-01-28','Włochy', NULL, NULL),
+(5, 5, 'Neymar', 'Junior', '1992-02-05','Brazylia', 10, FALSE),
+(6, 6, 'Donny', 'van de Beek', '1997-04-18','Holandia', 6, FALSE),
+(7, 7, 'Pepe', 'Anderson', '1987-04-05','Portugalia', 11, FALSE),
+(8, 8, 'Radamel', 'Falcao', '1986-02-10','Urugwaj', 9, FALSE),
+(9, 9, 'Artem', 'Dzyuba', '1988-08-22','Rosja', 22, FALSE),
+(10, 10, 'Chicharito', 'Hernandez', '1988-06-01','Meksyk', 14, FALSE),
+(NULL,NULL,'Gerard','Pique','1987-02-02','Hiszpania',NULL,NULL);
 
 
 INSERT INTO spotkanie (id_meczu, id_klubu, ilosc_bramek, czy_wygrany) VALUES
