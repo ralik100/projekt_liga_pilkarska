@@ -30,3 +30,9 @@ select * from klub k where not EXISTS (SELECT id_klubu from sklad where id_klubu
 CREATE VIEW English_Clubs AS
 SELECT * from klub where id_liga in(
   SELECT id from liga where kraj = 'Anglia');
+
+UPDATE sklad
+set czy_gra_w_meczu=FALSE
+where id = 5;
+
+delete from pilkarz where reprezentowany_kraj = 'Urugwaj';

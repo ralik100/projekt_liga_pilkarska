@@ -87,5 +87,3 @@ INSERT INTO spotkanie (id_meczu, id_klubu, ilosc_bramek, czy_wygrany) VALUES
 (7, 7, 1, FALSE),
 (7, 8, 2, TRUE),
 (8, 9, 0, FALSE);
-
-
